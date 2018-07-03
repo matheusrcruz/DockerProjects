@@ -1,0 +1,14 @@
+version: '2'
+    image: php:7.1
+    restart: always
+    volumes:
+      - ./:/opt/lamp/htcdoc/php
+    ports:
+      - 90:90
+      - 443:443
+
+  serve-generic-wordpress:
+    image: apache:latest
+    restart: always
+    volumes:
+       - ./:/opt/lamp/htcdoc/
